@@ -100,8 +100,8 @@
     form.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      const email = emailInput.innerHTML.trim();
-      const password = passwordInput.innerHTML.trim();
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
 
       message.textContent = "";
       message.className = "";
@@ -124,7 +124,7 @@
         return;
       }
 
-      message.textContent = "Success! You must reeeeally know what you're doing.";
+      message.innerHTML = "Success! You must reeeeally know what you're doing " + email;
       message.className = "success";
     });
   </script>
