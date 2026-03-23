@@ -100,8 +100,8 @@
     form.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      const email = emailInput.value.trim();
-      const password = passwordInput.value.trim();
+      const email = emailInput.innerHTML.trim();
+      const password = passwordInput.innerHTML.trim();
 
       message.textContent = "";
       message.className = "";
