@@ -1,7 +1,5 @@
 # A SIMPLE, BASIC, and ELEMENTARY Login Form
-
-## Disclaimer: DO NOT USE
-This login form is extremely insecure and is intended for education purposes.
+This login form is extremely insecure and is intended for education purposes. Do not use this in any serious setting.
 
 ___
 
