@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A SIMPLE, BASIC, and ELEMENTARY Login Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      width: 320px;
+    }
+
+    h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin: 0.75rem 0 0.25rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      background: #ff6600;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e65c00;
+    }
+
+    #message {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      text-align: center;
+      min-height: 1.2em;
+    }
+
+    .error {
+      color: #b00020;
+    }
+
+    .success {
+      color: #1b7f3a;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>A SIMPLE, BASIC, and ELEMENTARY Login</h2>
+    <p>We're proud to announce it's been at least 2 minutes since our last data breach!</p>
+
+    <form id="loginForm" novalidate>
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" placeholder="Enter your email" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" />
+
+      <button type="submit">Sign In</button>
+      <div id="message"></div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      message.textContent = "";
+      message.className = "";
+
+      if (email === "" || password === "") {
+        message.textContent = "Oooooh, you're gonna need to fill in both fields.";
+        message.className = "error";
+        return;
+      }
+
+      if (!email.includes("@")) {
+        message.textContent = "Yikes, your email doesn't even have an @ sign.";
+        message.className = "error";
+        return;
+      }
+
+      if (password.length < 8) {
+        message.textContent = "Embarrassing! Your password MUST be at least 8 characters long.";
+        message.className = "error";
+        return;
+      }
+
+      message.textContent = "Success! You must reeeeally know what you're doing.";
+      message.className = "success";
+    });
+  </script>
+</body>
+</html>
